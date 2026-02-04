@@ -65,7 +65,7 @@ const NavBar = () => {
         <a href="">Nossos Trabalhos</a>
         <a href="">Avaliação</a>
         <a href="">Contato</a>
-        <a href="">
+        <a href="">Carrinho
           <BsCart2 className="navbar-cart-icon" />
         </a>
         <button className="primary-button">Reservar Agora</button>
