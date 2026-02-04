@@ -45,6 +45,11 @@ nav{
   color: black;
   font-weight: 600;
 }
+
+.nav-bar-menu-container svg{
+    font-size: 25px;
+    cursor: pointer;
+}
   
 .primary-button{
   border-radius: 20px;
@@ -61,8 +66,72 @@ nav{
    background-color: #6cd5d7;
 }
 
+.home-text-section{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.primary-heading{
+  font-size: clamp(2rem, 5vw, 4rem);
+  color: #4c4c4c;
+  max-width: 600px;
+}
+
+.primary-text{
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  color: #6a6a6a;
+  margin: 1.5rem 0rem;
+}
+
+.home-banner-container{
+  position: relative;
+  display: flex;
+  padding-top: 4rem;
+}
+.home-bannerImage-container{
+  position: absolute;
+  right: -100px;
+  right: -150px;
+  z-index: -2;
+  max-width: 100%;
+}
+
+.home-image-section{
+  flex: 1;
+  display: flex;
+}
+
+.home-primary-image img{
+  width: 750px;
+  height: 640px;
+  object-fit: cover;
+  margin-left: 170px;
+}
+
+.secundary-button{
+  cursor: pointer;
+  padding: 1rem 2.5rem;
+  outline: none;
+  border: none;
+  border-radius: 5rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #65DCDC;
+   transition: all 0.3s ;
+}
+
+.secundary-button:hover{
+  background-color: #65dcdc8b;
+}
+
 /* Quando a tela for até 800 renderizmaos Mobile */
 @media (max-width: 800px) {
+   /* Home Component */
   .nav-logo-container{
     max-width: 100px;
   }
@@ -73,5 +142,21 @@ nav{
 
   .navbar-menu-container{
     display: flex;
+  }
+
+  /* Home Component */
+  .home-bannerImage-container{
+    max-width: 450px;
+  }
+
+  .home-primary-image img{
+    width: 376px;
+    height: 314px;
+    object-fit: cover;
+    margin-left: 5px;
+  }
+
+  .home-banner-container, .about-section-container{
+    flex-direction: column;
   }
 }
