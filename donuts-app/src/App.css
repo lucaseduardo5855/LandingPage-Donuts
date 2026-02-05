@@ -1,36 +1,36 @@
-*{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
-img{
+img {
   max-width: 100%;
   height: 100%;
 }
 
-.App{
+.App {
   min-height: 100vh;
-  width: 85vw; 
+  width: 85vw;
   max-width: 1900px;
   margin: 0rem auto;
 }
 
-body{
+body {
   max-width: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
   background-color: #fff;
 }
 
-nav{
+nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
   min-height: 90px;
 }
 
-.nav-logo-container img{
+.nav-logo-container img {
   max-width: 120px;
   max-height: 120px;
   display: flex;
@@ -38,7 +38,7 @@ nav{
   justify-content: center;
 }
 
-.navbar-links-container a{
+.navbar-links-container a {
   margin-right: 3rem;
   text-decoration: none;
   font-size: 1.1rem;
@@ -46,12 +46,12 @@ nav{
   font-weight: 600;
 }
 
-.nav-bar-menu-container svg{
-    font-size: 25px;
-    cursor: pointer;
+.nav-bar-menu-container svg {
+  font-size: 25px;
+  cursor: pointer;
 }
-  
-.primary-button{
+
+.primary-button {
   border-radius: 20px;
   padding: 0.9rem 1.75rem;
   border: none;
@@ -59,14 +59,14 @@ nav{
   font-size: 13px;
   font-weight: 600;
   cursor: pointer;
-  transition:  all 0.3s;
+  transition: all 0.3s;
 }
 
-.primary-button:hover{
-   background-color: #6cd5d7;
+.primary-button:hover {
+  background-color: #6cd5d7;
 }
 
-.home-text-section{
+.home-text-section {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -74,24 +74,24 @@ nav{
   align-items: flex-start;
 }
 
-.primary-heading{
+.primary-heading {
   font-size: clamp(2rem, 5vw, 4rem);
   color: #4c4c4c;
   max-width: 600px;
 }
 
-.primary-text{
+.primary-text {
   font-size: clamp(1rem, 3vw, 1.5rem);
   color: #6a6a6a;
   margin: 1.5rem 0rem;
 }
 
-.home-banner-container{
+.home-banner-container {
   position: relative;
   display: flex;
-  padding-top: 4rem;
+  padding-top: 5rem;
 }
-.home-bannerImage-container{
+.home-bannerImage-container {
   position: absolute;
   right: -100px;
   right: -150px;
@@ -99,19 +99,19 @@ nav{
   max-width: 100%;
 }
 
-.home-image-section{
-  flex: 1;
+.home-image-section {
+  flex: 2;
   display: flex;
 }
 
-.home-primary-image img{
-  width: 750px;
+.home-primary-image img {
+  width: 720px;
   height: 640px;
   object-fit: cover;
   margin-left: 170px;
 }
 
-.secundary-button{
+.secundary-button {
   cursor: pointer;
   padding: 1rem 2.5rem;
   outline: none;
@@ -121,42 +121,109 @@ nav{
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #65DCDC;
-   transition: all 0.3s ;
+  background-color: #65dcdc;
+  transition: all 0.3s;
 }
 
-.secundary-button:hover{
+.secundary-button:hover {
   background-color: #65dcdc8b;
+}
+
+/* Quando a tela for até 1000px renderizmaos Mobile */
+@media (max-width: 1000px) {
+  .navbar-links-container a {
+    margin-right: 1rem;
+    font-size: 1rem;
+  }
+
+  .primary-button {
+    font-size: 1rem;
+  }
+
+  .home-bannerImage-container {
+    max-width: 600px;
+  }
 }
 
 /* Quando a tela for até 800 renderizmaos Mobile */
 @media (max-width: 800px) {
-   /* Home Component */
-  .nav-logo-container{
+  /* NavBar Component */
+  .nav-logo-container {
     max-width: 100px;
   }
 
-  .navbar-links-container{
-    display: none;
+  .navbar-links-container {
+    display: none; /* apaga e deixa só menu hambu*/
   }
 
-  .navbar-menu-container{
-    display: flex;
+  .nav-bar-menu-container {
+    display: flex; /* menu hambu aparece*/
   }
 
-  /* Home Component */
-  .home-bannerImage-container{
+  /* Home Components*/
+  .home-bannerImage-container {
     max-width: 450px;
+    right: -10px; /* Traz a imagem de volta para a borda da tela */
+    top: -50px; /* Ajuste a altura se precisar */
   }
 
-  .home-primary-image img{
+  .home-primary-image img {
     width: 376px;
     height: 314px;
     object-fit: cover;
     margin-left: 5px;
   }
 
-  .home-banner-container, .about-section-container{
+  .home-banner-container,
+  .about-section-container {
+    flex-direction: column-reverse; /* inverte a imagem vai para topo e html em baixo */
+    align-items: center;
+    justify-content: center;
+  }
+
+  .about-section-container {
     flex-direction: column;
+  }
+
+  .home-image-section,
+  .about-section-image-container {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .about-section-image-container img {
+    margin-left: 5px;
+    margin-bottom: 20px;
+    margin-top: 0px;
+  }
+
+  .primary-heading {
+    text-align: center;
+    max-width: 90%;
+  }
+
+  .primary-text {
+    text-align: center;
+  }
+
+  .home-text-section,
+  .about-section-text-container {
+    justify-content: center;
+    align-items: center;
+    margin-top: 16px;
+    margin-left: 0 !important;
+  }
+
+  .secundary-button {
+    font-size: 16px;
+    padding: 15px 32px;
+    cursor: pointer;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .home-bannerImage-container, .about{
+
   }
 }
