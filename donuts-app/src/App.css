@@ -169,7 +169,7 @@ nav {
 .primary-subheading {
   font-weight: 700;
   color: rgba(253, 127, 148);
-  font-size: 2rem;
+  font-size: 3rem;
 }
 
 .primary-heading {
@@ -205,9 +205,19 @@ nav {
 /* Work Section */
 .work-section-wrapper {
   margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
 }
 
 .work-section-top {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
 
@@ -225,7 +235,7 @@ nav {
 .work-section-info {
   width: 290px;
   min-height: 350px;
-  background-color: #fff;
+  background-color: #ffc0cb;
   display: flex;
   padding: 1rem 1rem;
   flex-direction: column;
@@ -261,18 +271,48 @@ nav {
   font-size: 2rem;
 }
 
-/* Testimonials */
-.testemonial-section-bottom {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: 2rem;
+.info-boxes-img-container svg {
+  color: #484948;
 }
 
-.testemonial-img img {
-  margin-top: 30px;
+/* Testimonials */
+
+.testemonial-section-bottom {
+  margin-top: 2rem;
+  padding: 3rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  border-radius: 3rem;
+  background-color: #ffc0cb;
+  text-align: center;
+  gap: 1rem;
+  margin-bottom: 5rem;
+}
+
+.testemonial-section-bottom p {
+  font-weight: 400;
+  color: #505050;
+  max-width: 500px;
+  font-size: 1.1rem;
+  margin: 1rem 0;
+  padding: 1rem;
+}
+
+.testemonial-stars-container svg {
+  margin: 0 0.2rem;
+  font-size: 1rem;
+  color: orage;
+}
+
+.testemonial-section-bottom h2 {
+  margin-top: 1.5rem;
+}
+
+.work-section-top .primary-heading {
+  text-align: center;
+  max-width: 700px; /*  evita que o texto fique muito largo em telas grandes */
+  margin: 0 auto; /* Garante que a caixa do H1 fique no meio se tiver largura fixa */
 }
 
 /* Quando a tela for até 1000px renderizmaos Mobile */
@@ -406,6 +446,13 @@ nav {
   /* Work Section */
   .work-section-wrapper {
     margin-top: 3rem;
+  }
+
+  .testemonial-section-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 }
 

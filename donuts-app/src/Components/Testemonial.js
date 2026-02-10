@@ -39,7 +39,8 @@ const Testemonial = () => {
         {testemonials.map((data) => (
           <div className="testemonial-img" key={data.nome}>
             <img src={ProfilePicture} alt={data.nome} />
-            <h1>{data.nome}</h1>
+            <h2>{data.nome}</h2>
+
             <div className="testemonial-stars-container">
               {[...Array(data.stars)].map((_, index) => (
                 <AiFillStar key={index} color="orange" />
