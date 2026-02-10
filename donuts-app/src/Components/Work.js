@@ -1,5 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHouseFloodWater } from "@fortawesome/free-solid-svg-icons";
+import { faUtensils } from "@fortawesome/free-solid-svg-icons";
+import { faTruck } from "@fortawesome/free-solid-svg-icons";
 
 const Work = () => {
   const WorkinfoData = [
@@ -9,14 +11,14 @@ const Work = () => {
       text: "Todos os nossos donuts são preparados com carinho e atenção aos detalhes. Usamos receitar tradicionais e técnicas artesanais para criar donuts frescos e saborosos!",
     },
     {
-      image: <FontAwesomeIcon icon={faHouseFloodWater} />,
-      title: "Feito de forma caseira",
-      text: "Todos os nossos donuts são preparados com carinho e atenção aos detalhes. Usamos receitar tradicionais e técnicas artesanais para criar donuts frescos e saborosos!",
+      image: <FontAwesomeIcon icon={faUtensils} />,
+      title: "Ingrediente selecionados",
+      text: "Escolhemos os melhores ingredientes para garantir que nosso donuts sejam sempre frescos e deliciosos. Usamos apenas produtos de alta qualidade desde a farinha até os recheios, para proporcionar uma experiência unica.",
     },
     {
-      image: <FontAwesomeIcon icon={faHouseFloodWater} />,
-      title: "Feito de forma caseira",
-      text: "Todos os nossos donuts são preparados com carinho e atenção aos detalhes. Usamos receitar tradicionais e técnicas artesanais para criar donuts frescos e saborosos!",
+      image: <FontAwesomeIcon icon={faTruck} />,
+      title: "Entrega em toda a Cidade",
+      text: "Levamos nossos donuts diretamento até você em qualquer lugar da cidade. Nossa Equipe de entregar garante que seu pedido chegue rápido e em perfeitas condições.",
     },
   ];
 
@@ -38,7 +40,7 @@ const Work = () => {
         {WorkinfoData.map((data) => (
           <div className="work-section-info" key={data.title}>
             <div className="info-boxes-img-container">{data.image}</div>
-            <h1>{data.title}</h1>
+            <h2>{data.title}</h2>
             <p>{data.text}</p>
           </div>
         ))}
