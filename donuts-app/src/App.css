@@ -323,6 +323,7 @@ nav {
   justify-content: center;
   text-align: center;
   margin: 6rem;
+  margin-bottom: 12rem;
 }
 
 .contact-page-wrapper h1 {
@@ -494,22 +495,60 @@ nav {
 
   /* Contact Section */
   .contact-page-wrapper {
-    margin-top: 5rem;
-  }
-
-  .contact-form-container {
-    padding: 1rem;
+    width: 100% !important; /* Ocupa 90% da largura da janela */
+    padding: 0 5%;
+    box-sizing: border-box;
+    margin: 0 auto; /* Centraliza */
+    display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    border-radius: 1rem;
+    justify-content: center;
+    margin-bottom: 5rem;
   }
 
+  /* 2. Esticando o Texto (H1) */
+  .contact-page-wrapper .primary-heading {
+    max-width: 100% !important; /* O SEGREDO: Remove o limite que espremia o texto */
+    width: 100%;
+    font-size: 1.3rem; /* Tamanho bom para celular */
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    padding: 0; /* Remove preenchimentos extras */
+  }
+
+  /* Ajuste no subtítulo também */
+  .contact-page-wrapper .primary-subheading {
+    max-width: 100% !important;
+    margin-bottom: 1rem;
+  }
+
+  /* 3. Aumentando a Caixa Rosa */
+  .contact-form-container {
+    width: 100% !important; /* Força a ocupar toda a largura do pai (90vw) */
+    max-width: 100% !important; /* Remove travas antigas */
+    padding: 2rem 1rem !important; /* Mais gordinho verticalmente */
+    border-radius: 2rem; /* Bordas arredondadas */
+    margin-top: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+  }
+
+  /* 4. O Input dentro da caixa rosa */
   .contact-form-container input {
-    font-size: 1rem;
-    max-width: 100%;
-    padding: 0.5rem 1em;
-    margin-bottom: 0.8rem;
+    width: 100% !important; /* Estica até a borda da caixa rosa */
+    margin-bottom: 1rem;
+    border-radius: 50px;
+    padding: 1rem;
+    box-sizing: border-box; /* Garante que o padding não estoure a tela */
+  }
+
+  /* 5. O Botão dentro da caixa rosa */
+  .contact-form-container .secundary-button {
+    width: 60% !important;
+    justify-content: center;
   }
 }
 
