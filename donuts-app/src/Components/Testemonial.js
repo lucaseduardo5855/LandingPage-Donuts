@@ -2,6 +2,27 @@ import ProfilePicture from "../Assets/john-doe-image.png";
 import { AiFillStar } from "react-icons/ai";
 
 const Testemonial = () => {
+  const testemonials = [
+    {
+      img: { ProfilePicture },
+      nome: "Lucas",
+      text: "Donuts maravilhosos, de excelente qualidade os ingredientes, recomendo a todos!",
+      stars: 5,
+    },
+    {
+      img: { ProfilePicture },
+      nome: "Gabriel",
+      text: "Comida adoravel, e atendimento nota 10!",
+      stars: 5,
+    },
+    {
+      img: { ProfilePicture },
+      nome: "Fernando",
+      text: "Donuts frescos, vou recomendar para todos, muito bom!",
+      stars: 5,
+    },
+  ];
+
   return (
     <div className="work-section-wrapper">
       <div className="work-section-top">
@@ -14,20 +35,19 @@ const Testemonial = () => {
         </p>
       </div>
 
-      <div className="testomonial-section-bottom">
-        <img src={ProfilePicture} alt="imagem do avaliador" />
-        <p>
-          Descobri a loja de donuts foi uma das melhores coisas, O atendimento é
-          excelente e os donuts são sempre frescos, recomendo!
-        </p>
-      </div>
-
-      <div className="testemonials-starts-container">
-        <AiFillStar />
-        <AiFillStar />
-        <AiFillStar />
-        <AiFillStar />
-        <AiFillStar />
+      <div className="testemonial-section-bottom">
+        {testemonials.map((data) => (
+          <div className="testemonial-img" key={data.nome}>
+            <img src={ProfilePicture} alt={data.nome} />
+            <h1>{data.nome}</h1>
+            <div className="testemonial-stars-container">
+              {[...Array(data.stars)].map((_, index) => (
+                <AiFillStar key={index} color="orange" />
+              ))}
+            </div>
+            <p>{data.text}</p>
+          </div>
+        ))}
       </div>
     </div>
   );

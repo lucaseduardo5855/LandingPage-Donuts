@@ -261,6 +261,20 @@ nav {
   font-size: 2rem;
 }
 
+/* Testimonials */
+.testemonial-section-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 2rem;
+}
+
+.testemonial-img img {
+  margin-top: 30px;
+}
+
 /* Quando a tela for até 1000px renderizmaos Mobile */
 @media (max-width: 1000px) {
   .navbar-links-container a {
