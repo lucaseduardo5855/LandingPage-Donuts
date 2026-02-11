@@ -323,7 +323,7 @@ nav {
   justify-content: center;
   text-align: center;
   margin: 6rem;
-  margin-bottom: 12rem;
+  margin-bottom: 6rem;
 }
 
 .contact-page-wrapper h1 {
@@ -351,6 +351,67 @@ nav {
   outline: none;
   font-size: 1rem;
   padding: 0.5rem 1rem;
+}
+
+/* Footer Section */
+.footer-wrapper {
+  margin: 6rem 10rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-logo-container {
+  width: 200px;
+  height: 160px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-icons {
+  margin-bottom: 1rem;
+}
+
+.footer-icons svg {
+  font-size: 1.5rem;
+  margin: 1rem;
+  color: #484948;
+}
+
+.footer-icons svg:hover {
+  color: #ffc0cb;
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+}
+
+.footer-section-one {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.footer-section-two {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+}
+
+.footer-section-two span {
+  margin: 0.25rem 0;
+  font-weight: 600;
+  color: #484948;
+  cursor: pointer;
+}
+
+.footer-section-columns {
+  display: flex;
+  flex-direction: column;
+  min-width: 190px;
+  text-align: center;
+  justify-content: center;
+  margin-left: 1rem;
 }
 
 /* Quando a tela for até 1000px renderizmaos Mobile */
