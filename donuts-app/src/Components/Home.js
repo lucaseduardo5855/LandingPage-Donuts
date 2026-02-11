@@ -7,7 +7,7 @@ import { FiArrowRight} from 'react-icons/fi';
 
  const Home = () => {
     return(
-        <div className="home-container">
+        <div className="home-container" id="home">
             <NavBar />        
 
             <div className="home-banner-container">
@@ -18,16 +18,15 @@ import { FiArrowRight} from 'react-icons/fi';
 
                 <div className="home-text-section">
                     <h1 className="primary-heading">
-                       Seu Donut Favorito Entregue em Sua Casa     
+                       Seu Donuts Favorito Entregue em Sua Casa     
                     </h1>
                     <p className="primary-text">
                         Diversos sabores deliciosos pra adoçar seus melhores momentos. Peça já o seu e receba um mimo de surpresa.
                     </p>
-                    <button className="secundary-button">Faça seu pedido <FiArrowRight/></button>
-
                     <p className="primary-text">
                         Ou venha comer conosco em um ambiente climatizado e aconchegante com várias opções para seu pedido
                     </p>
+                    <button className="secundary-button">Faça seu pedido <FiArrowRight/></button>
                 </div>
 
                 <div className="home-image-section">

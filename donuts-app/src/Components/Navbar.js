@@ -9,7 +9,7 @@ import { HiOutlineBars3 } from "react-icons/hi2";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import HomeWorkIcon from "@mui/icons-material/HomeWork";
-import List from "@mui/material/List";              
+import List from "@mui/material/List";
 import Divider from "@mui/material/Divider";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
@@ -30,26 +30,32 @@ const NavBar = () => {
     {
       text: "Home",
       icon: <HomeIcon />,
+      href: "#home",
     },
     {
       text: "Sobre Nós",
       icon: <InfoIcon />,
+      href: "#sobre",
     },
     {
       text: "Nosso Trabalho",
       icon: <HomeWorkIcon />,
+      href: "#trabalho",
     },
     {
       text: "Avaliação",
       icon: <CommentRoundedIcon />,
+      href: "#avaliação",
     },
     {
-        text: "Contato",
-        icon: <PhoneRoundedIcon/>
+      text: "Contato",
+      icon: <PhoneRoundedIcon />,
+      href: "#contato",
     },
     {
       text: "Carrinho",
       icon: <ShoppingCartRoundedIcon />,
+      href: "#",
     },
   ];
 
@@ -60,39 +66,39 @@ const NavBar = () => {
       </div>
 
       <div className="navbar-links-container">
-        <a href="">Home</a>
-        <a href="">Sobre Nós</a>
-        <a href="">Nossos Trabalhos</a>
-        <a href="">Avaliação</a>
-        <a href="">Contato</a>
-        <a href="">
+        <a href="#home">Home</a>
+        <a href="#sobre">Sobre Nós</a>
+        <a href="#trabalho">Nossos Trabalhos</a>
+        <a href="#avaliação">Avaliação</a>
+        <a href="#contato">Contato</a>
+        <a href="#">
           <BsCart2 className="navbar-cart-icon" />
         </a>
         <button className="primary-button">Reservar Agora</button>
       </div>
 
-     {/* Menu de Hamburuger */}
+      {/* Menu de Hamburuger */}
       <div className="nav-bar-menu-container">
         <HiOutlineBars3 onClick={() => setOpenMenu(true)} />
       </div>
 
       <Drawer open={openMenu} onClose={() => setOpenMenu(false)} anchor="right">
         <Box
-            sx={{width: 250}}
-            role="presentation"
-            onClick={() => setOpenMenu(false)}
-            onKeyDown={() => setOpenMenu(false)}
+          sx={{ width: 250 }}
+          role="presentation"
+          onClick={() => setOpenMenu(false)}
+          onKeyDown={() => setOpenMenu(false)}
         >
-         <List>
+          <List>
             {menuOptions.map((item) => (
-                <ListItem key={item.text} disablePadding>
-                    <ListItemButton>
-                        <ListItemIcon>{item.icon}</ListItemIcon>
-                        <ListItemText>{item.text}</ListItemText>
-                    </ListItemButton>
-                </ListItem>
+              <ListItem key={item.text} disablePadding>
+                <ListItemButton component="a" href={item.href} onClick={() => setOpenMenu(false)}>
+                  <ListItemIcon>{item.icon}</ListItemIcon>
+                  <ListItemText primary={item.text} />
+                </ListItemButton>
+              </ListItem>
             ))}
-         </List>
+          </List>
         </Box>
       </Drawer>
     </nav>

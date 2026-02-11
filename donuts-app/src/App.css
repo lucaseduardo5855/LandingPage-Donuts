@@ -5,16 +5,31 @@
   font-family: "Poppins", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 img {
   max-width: 100%;
   height: 100%;
 }
 
+/* Full Width Config */
 .App {
   min-height: 100vh;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* Centralizando apenas o conteúdo que precisa ser centralizado */
+.home-container,
+.work-section-wrapper,
+.contact-page-wrapper {
   width: 85vw;
   max-width: 1900px;
-  margin: 0rem auto;
+  margin: 0 auto;
 }
 
 body {
@@ -22,6 +37,7 @@ body {
   overflow-x: hidden;
   background-color: #fff;
 }
+
 
 nav {
   display: flex;
@@ -42,13 +58,19 @@ nav {
   margin-right: 3rem;
   text-decoration: none;
   font-size: 1.1rem;
-  color: black;
-  font-weight: 600;
+  color: #484948;
+  font-weight: 500;
+}
+
+.navbar-links-container a:hover {
+  color: #E557B3;
+  transition: all 0.3s ease-in-out;
 }
 
 .nav-bar-menu-container svg {
   font-size: 25px;
   cursor: pointer;
+  display: none;
 }
 
 .primary-button {
@@ -77,13 +99,19 @@ nav {
 .primary-heading {
   font-size: clamp(2rem, 5vw, 4rem);
   color: #4c4c4c;
-  max-width: 600px;
+  /* Aumentando o max-width para "esticar" o texto como pedido */
+  max-width: 800px;
+}
+
+.primary-heading h1 {
+  font-size: 2rem;
 }
 
 .primary-text {
   font-size: clamp(1rem, 3vw, 1.5rem);
   color: #6a6a6a;
-  margin: 1.5rem 0rem;
+  margin: 0.5rem 0rem;
+  margin-bottom: rem;
 }
 
 .home-banner-container {
@@ -91,6 +119,7 @@ nav {
   display: flex;
   padding-top: 5rem;
 }
+
 .home-bannerImage-container {
   position: absolute;
   right: -100px;
@@ -99,16 +128,20 @@ nav {
   max-width: 100%;
 }
 
+.home-bannerImage-container img {
+  max-width: 750px;
+}
+
 .home-image-section {
   flex: 2;
   display: flex;
 }
 
 .home-primary-image img {
-  width: 720px;
-  height: 640px;
+  width: 550px;
   object-fit: cover;
-  margin-left: 170px;
+  margin-left: 300px;
+  margin-bottom: 10px;
 }
 
 .secundary-button {
@@ -139,31 +172,83 @@ nav {
   position: relative;
   align-items: center;
   justify-content: space-between;
+  align-items: center;
+  /* Full Width About Style */
+  width: 100%;
+  margin-top: 8rem;
+  /* Espaço do topo */
+  padding: 6rem 7.5vw;
+  /* Padding lateral simula a margem de 85vw (100-85)/2 = 7.5 */
+  background-color: #f4f6f8;
+  /* Cinza moderno e elegante */
+  /* Sem border-radius ou margin lateral para ir até a borda */
 }
 
+
 .about-background-image-container {
-  position: absolute;
-  z-index: -2;
+  /* position: absolute; removed to make it a flex item */
+  /* z-index: -2; */
+  flex: 1;
+  display: flex;
+  /* Para centralizar a imagem dentro do container se necessário */
+  justify-content: center;
+  align-items: center;
   object-fit: contain;
-  width: 460px;
-  height: 600px;
+  /* width: 460px; removed specific width constraint */
+  max-width: 50%;
+  /* Garante que não ocupe mais que a metade */
+}
+
+.about-background-image-container img {
+  width: 100%;
+  max-width: 500px;
+  /* Limite razoável para a imagem */
+  height: auto;
+  border-radius: 1rem;
+  /* Opcional: deixar bonitinho */
 }
 
 .about-section-image-container {
   flex: 0.9;
+  display: none;
 }
 
 .about-section-image-container img {
-  margin-left: 270px;
+  margin-left: -150px;
+  /* Mais para a ESQUERDA AINDA */
   margin-bottom: 85px;
 }
+
 
 .about-section-text-container {
   flex: 1;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin-left: 200px;
+  align-items: center;
+  /* Centralizado */
+  text-align: center;
+  /* Texto Centralizado */
+  margin: 0;
+  margin-left: 2rem;
+  margin-top: -4rem;
+  /* Mais para cima */
+  /* Limite de leitura */
+}
+
+/* Reduzindo e padronizando textos da Seção Sobre (Desktop) */
+.about-section-text-container .primary-heading {
+  font-size: 2rem !important;
+  /* Tamanho 2rem (igual ao Work) */
+  line-height: 1.2;
+  max-width: 600px;
+  color: #484848;
+  /* Cor padronizada */
+}
+
+.about-section-text-container .primary-text {
+  font-size: 1rem !important;
+  /* Texto menor */
 }
 
 .primary-subheading {
@@ -179,6 +264,29 @@ nav {
 .about-buttons-container {
   margin-top: 2rem;
   display: flex;
+  justify-content: flex-start;
+  /* Alinhamento à esquerda */
+  align-items: center;
+  /* Alinha verticalmente os botões */
+  gap: 1rem;
+}
+
+.watch-vid.secundary-button {
+  padding: 1rem 2.5rem;
+  background-color: white;
+  outline: none;
+  border: none;
+  border-radius: 5rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  font-weight: 600;
+  color: #484848;
+  transition: 0.2s;
+  margin-top: 1.5rem;
+  /* Desgruda botão "Faça seu pedido" do texto */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .watch-video-button {
@@ -204,7 +312,8 @@ nav {
 
 /* Work Section */
 .work-section-wrapper {
-  margin-top: 1rem;
+  margin-top: 10rem;
+  /* Aumentado espaçamento Desktop (Nosso Trabalho) */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -263,7 +372,8 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap; /* (Se apertar, joga pro andar de baixo) */
+  flex-wrap: wrap;
+  /* (Se apertar, joga pro andar de baixo) */
 }
 
 .info-boxes-img-container {
@@ -278,16 +388,29 @@ nav {
 /* Testimonials */
 
 .testemonial-section-bottom {
-  margin-top: 2rem;
-  padding: 3rem 3rem;
+  margin-top: 5rem;
+  /* Aumentado espaço entre Título e Cards (Desktop) */
+  /* padding reduzido no container pai */
+  padding: 1rem;
   display: flex;
-  align-items: center;
-  justify-items: center;
-  border-radius: 3rem;
-  background-color: #ffc0cb;
+  align-items: stretch;
+  /* Cards com mesma altura */
+  justify-content: center;
+  /* background-color removido do container pai para ir pros cards */
+  /* background-color: #ffc0cb; */
   text-align: center;
-  gap: 1rem;
-  margin-bottom: 5rem;
+  gap: 2rem;
+  gap: 2rem;
+  /* Aumentando espaçamento fundo Avaliações */
+  flex-wrap: wrap;
+}
+
+/* Background para Avaliações (Cinza Leve) */
+#avaliação {
+  background-color: #f9f9f9;
+  border-radius: 2rem;
+  padding-bottom: 2rem;
+  margin-top: 5rem;
 }
 
 .testemonial-section-bottom p {
@@ -302,7 +425,34 @@ nav {
 .testemonial-stars-container svg {
   margin: 0 0.2rem;
   font-size: 1rem;
-  color: orage;
+  color: orange;
+  /* Corrigido de orage para orange */
+}
+
+/* Novo estilo para os "Cards" de depoimento */
+.testemonial-img {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  min-width: 250px;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.testemonial-img:hover {
+  transform: translateY(-5px);
+}
+
+.testemonial-img img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
 }
 
 .testemonial-section-bottom h2 {
@@ -311,8 +461,10 @@ nav {
 
 .work-section-top .primary-heading {
   text-align: center;
-  max-width: 700px; /*  evita que o texto fique muito largo em telas grandes */
-  margin: 0 auto; /* Garante que a caixa do H1 fique no meio se tiver largura fixa */
+  max-width: 700px;
+  /*  evita que o texto fique muito largo em telas grandes */
+  margin: 0 auto;
+  /* Garante que a caixa do H1 fique no meio se tiver largura fixa */
 }
 
 /* Contact Section */
@@ -331,11 +483,13 @@ nav {
   font-size: 1.4rem;
 }
 
+/* Botão Desgrudado no Desktop */
 .contact-form-container {
   background-color: #ffc0cb;
   width: 100%;
   max-width: 700px;
-  margin-top: 3rem;
+  margin-top: 5rem;
+  /* Aumentando espaço da caixa rosa */
   display: flex;
   align-items: center;
   padding: 1em;
@@ -354,10 +508,13 @@ nav {
 }
 
 /* Footer Section */
+/* Footer Full Width */
 .footer-wrapper {
-  margin: 6rem 10rem;
-  display: flex;
-  justify-content: space-between;
+  width: 100%;
+  margin: 0;
+  padding: 4rem 7.5vw;
+  background-color: #AAD0D5;
+  /* Fundo clean e elegante */
 }
 
 .footer-logo-container {
@@ -405,6 +562,28 @@ nav {
   cursor: pointer;
 }
 
+/* Footer Mobile Layout Fix */
+@media (max-width: 800px) {
+  .footer-wrapper {
+    flex-direction: column;
+    margin: 0;
+    /* Remove margem lateral */
+    width: 100%;
+    /* Garante Full Width */
+    gap: 2rem;
+  }
+
+  .footer-section-two {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .footer-section-columns {
+    margin: 0;
+    margin-bottom: 1rem;
+  }
+}
+
 .footer-section-columns {
   display: flex;
   flex-direction: column;
@@ -412,6 +591,85 @@ nav {
   text-align: center;
   justify-content: center;
   margin-left: 1rem;
+}
+
+/* Ajustes para Screens Médios (cobre 1366px e 1393px) */
+@media (max-width: 1450px) {
+
+  /* Aumentado para pegar 1393px com folga */
+  /* Removemos a restrição de .App width: 90vw para manter Full Width */
+
+  /* Resetando para mobile/tablet onde Full Width se comporta diferente */
+  .about-section-container,
+  #avaliação {
+    padding: 4rem 1rem;
+    /* Menos padding lateral em telas pequenas */
+  }
+
+  /* HOME: Título e Texto menores */
+  .primary-heading {
+    font-size: 2.2rem;
+    /* Reduzindo mais um pouco */
+  }
+
+  .home-text-section .primary-text {
+    font-size: 0.9rem;
+    /* Texto ainda menor para 1366 */
+    max-width: 450px;
+  }
+
+  .home-text-section .secundary-button {
+    margin-top: 5rem;
+    /* Aumentado MAIS AINDA para desgrudar */
+  }
+
+  .primary-heading {
+    font-size: 2rem;
+    /* Reduzindo Título */
+  }
+
+  /* HOME: Imagem menor */
+  .home-bannerImage-container {
+    max-width: 40vw;
+    /* Reduzindo ainda mais para 1366px */
+    right: -80px;
+  }
+
+  .home-bannerImage-container img {
+    max-width: 400px;
+    /* Reduzindo imagem */
+  }
+
+  .about-section-image-container img {
+    max-width: 350px;
+    /* Reduzindo imagem do About em 1366 */
+  }
+
+  /* WORK & TESTIMONIALS: Espaçamento e Texto Menor */
+  .work-section-top .primary-text {
+    font-size: 1rem;
+    max-width: 700px;
+    margin-top: 1rem;
+    /* Padronizado com Avaliações */
+    margin-bottom: 2rem;
+  }
+
+  .work-section-top h1 {
+    font-size: 2rem;
+    margin-bottom: 0px !important;
+    /* Aproximando do título */
+  }
+
+  .testemonial-section-bottom h2 {
+    margin-bottom: 0px !important;
+    /* Aproximando do texto */
+  }
+
+  .work-section-top h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    /* Espaço entre título e texto */
+  }
 }
 
 /* Quando a tela for até 1000px renderizmaos Mobile */
@@ -432,24 +690,54 @@ nav {
 
 /* Quando a tela for até 800 renderizmaos Mobile */
 @media (max-width: 800px) {
+
   /* NavBar Component */
   .nav-logo-container {
     max-width: 100px;
   }
 
   .navbar-links-container {
-    display: none; /* apaga e deixa só menu hambu*/
+    display: none;
+    /* apaga e deixa só menu hambu*/
   }
 
   .nav-bar-menu-container {
-    display: flex; /* menu hambu aparece*/
+    display: flex !important;
+    z-index: 999;
+    cursor: pointer;
+    position: fixed;
+    /* FIXO NA TELA */
+    top: 2rem;
+    right: 2rem;
+    z-index: 1000;
+  }
+
+  .nav-bar-menu-container svg {
+    display: block !important;
+    font-size: 2.5rem;
+    /* Maior para facilitar o clique */
+    color: #484948;
+    cursor: pointer;
+    pointer-events: auto;
+    /* Garante que recebe cliques */
+  }
+
+
+
+  .nav-bar-menu-container svg {
+    font-size: 1.5rem;
+    /* Aumentar ícone */
+    color: #000;
+    /* Garantir contraste */
   }
 
   /* Home Components*/
   .home-bannerImage-container {
-    max-width: 450px;
-    right: -10px; /* Traz a imagem de volta para a borda da tela */
-    top: -50px; /* Ajuste a altura se precisar */
+    max-width: 350px;
+    right: -10px;
+    /* Traz a imagem de volta para a borda da tela */
+    top: -20px;
+    /* Ajuste a altura se precisar */
   }
 
   .home-primary-image img {
@@ -461,9 +749,31 @@ nav {
 
   .home-banner-container,
   .about-section-container {
-    flex-direction: column-reverse; /* inverte a imagem vai para topo e html em baixo */
+    flex-direction: column-reverse;
+    /* IMAGEM EM CIMA, TEXTO EM BAIXO */
     align-items: center;
     justify-content: center;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5rem;
+    /* Aumentado espaçamento MOBILE (Sobre vs Botão) */
+  }
+
+  /* HOME BANNER IMAGE MOBILE */
+  .home-bannerImage-container {
+    max-width: 350px !important;
+    right: 0px;
+    /* Traz pra dentro da tela */
+    top: 100px;
+    /* Desce MAIS AINDA para evitar corte */
+  }
+
+  .home-bannerImage-container img {
+    width: 80%;
+    height: auto;
+    /* IMPORTANTE: Evita distorção */
+    object-fit: contain;
+    max-width: 200px;
   }
 
   .home-image-section,
@@ -502,17 +812,25 @@ nav {
   }
 
   .about-section-image-container {
-    margin-top: 5rem;
+    margin-top: 2rem;
+    /* Reduzido de 5rem */
   }
 
   .about-section-image-container img {
-    margin-left: 5px;
+    margin-left: 0;
     margin-bottom: 20px;
-    margin: -150px 0 5px 0;
+    margin: 0;
+    margin-bottom: 20px;
+    margin: 0;
+    max-width: 400px;
+    /* Aumentada para esticar mais */
+    width: 90%;
+    /* Ocupa quase toda a largura */
   }
 
   .about-background-image-container {
-    display: none;
+    display: flex;
+    /* Mostrar imagem no mobile também */
   }
 
   .primary-subheading {
@@ -556,10 +874,12 @@ nav {
 
   /* Contact Section */
   .contact-page-wrapper {
-    width: 100% !important; /* Ocupa 90% da largura da janela */
+    width: 100% !important;
+    /* Ocupa 90% da largura da janela */
     padding: 0 5%;
     box-sizing: border-box;
-    margin: 0 auto; /* Centraliza */
+    margin: 0 auto;
+    /* Centraliza */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -569,12 +889,15 @@ nav {
 
   /* 2. Esticando o Texto (H1) */
   .contact-page-wrapper .primary-heading {
-    max-width: 100% !important; /* O SEGREDO: Remove o limite que espremia o texto */
+    max-width: 100% !important;
+    /* O SEGREDO: Remove o limite que espremia o texto */
     width: 100%;
-    font-size: 1.3rem; /* Tamanho bom para celular */
+    font-size: 1.3rem;
+    /* Tamanho bom para celular */
     line-height: 1.2;
-    margin-bottom: 1rem;
-    padding: 0; /* Remove preenchimentos extras */
+    margin-bottom: 2rem;
+    padding: 0;
+    /* Remove preenchimentos extras */
   }
 
   /* Ajuste no subtítulo também */
@@ -585,10 +908,14 @@ nav {
 
   /* 3. Aumentando a Caixa Rosa */
   .contact-form-container {
-    width: 100% !important; /* Força a ocupar toda a largura do pai (90vw) */
-    max-width: 100% !important; /* Remove travas antigas */
-    padding: 2rem 1rem !important; /* Mais gordinho verticalmente */
-    border-radius: 2rem; /* Bordas arredondadas */
+    width: 100% !important;
+    /* Força a ocupar toda a largura do pai (90vw) */
+    max-width: 100% !important;
+    /* Remove travas antigas */
+    padding: 2rem 1rem !important;
+    /* Mais gordinho verticalmente */
+    border-radius: 2rem;
+    /* Bordas arredondadas */
     margin-top: 1rem;
 
     display: flex;
@@ -599,11 +926,13 @@ nav {
 
   /* 4. O Input dentro da caixa rosa */
   .contact-form-container input {
-    width: 100% !important; /* Estica até a borda da caixa rosa */
+    width: 100% !important;
+    /* Estica até a borda da caixa rosa */
     margin-bottom: 1rem;
     border-radius: 50px;
     padding: 1rem;
-    box-sizing: border-box; /* Garante que o padding não estoure a tela */
+    box-sizing: border-box;
+    /* Garante que o padding não estoure a tela */
   }
 
   /* 5. O Botão dentro da caixa rosa */
@@ -614,6 +943,7 @@ nav {
 }
 
 @media (max-width: 600px) {
+
   .home-bannerImage-container,
   .about {
     display: none;

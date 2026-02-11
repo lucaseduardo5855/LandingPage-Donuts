@@ -24,7 +24,7 @@ const Testemonial = () => {
   ];
 
   return (
-    <div className="work-section-wrapper">
+    <div className="work-section-wrapper" id="avaliação">
       <div className="work-section-top">
         <p className="primary-subheading">Avaliações</p>
         <h1 className="primary-heading">O que dizem sobre nós</h1>

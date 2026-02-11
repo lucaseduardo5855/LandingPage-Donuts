@@ -7,7 +7,7 @@ import { BsYoutube } from "react-icons/bs";
 
 const Footer = () => {
   return (
-    <div className="footer-wrapper">
+    <div className="footer-wrapper" id="Footer">
       <div className="footer-section-one">
         <div className="footer-logo-container">
           <img src={Logo} alt="logo donuts footer" />
@@ -23,16 +23,11 @@ const Footer = () => {
 
       <div className="footer-section-two">
         <div className="footer-section-columns">
-          <span>Qualidade</span>
-          <span>Ajudar</span>
-          <span>Nossa Marca</span>
-          <span>Carreira</span>
-          <span>Nosso Trabalho</span>
         </div>
 
         <div className="footer-section-columns">
-          <span>43 99171123</span>
-          <span>lucas.eduardo5855@gmail.com</span>
+          <span>Contato: (43) 99171-1234</span>
+          <span>Email: [EMAIL_ADDRESS]</span>
         </div>
 
         <div className="footer-section-columns">
