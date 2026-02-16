@@ -167,6 +167,10 @@ nav {
   font-size: 1.5rem;
 }
 
+.home-text-section .secundary-button {
+  margin-top: 2rem;
+}
+
 .about-section-container {
   display: flex;
   position: relative;
@@ -255,6 +259,7 @@ nav {
   font-weight: 700;
   color: rgba(253, 127, 148);
   font-size: 3rem;
+  margin-bottom: 2rem;
 }
 
 .primary-heading {
@@ -304,6 +309,10 @@ nav {
   justify-content: center;
   align-items: center;
 }
+
+.watch-video-button:hover {
+  color: #E557B3;
+} 
 
 .watch-video-button svg {
   font-size: 2rem;
@@ -536,7 +545,7 @@ nav {
 }
 
 .footer-icons svg:hover {
-  color: #ffc0cb;
+  color: #E557B3;
   cursor: pointer;
   transition: 0.4s ease-in-out;
 }
@@ -559,6 +568,11 @@ nav {
   margin: 0.25rem 0;
   font-weight: 600;
   color: #484948;
+  cursor: pointer;
+}
+
+.footer-section-two span:hover {
+  color: #E557B3;
   cursor: pointer;
 }
 
@@ -608,31 +622,36 @@ nav {
 
   /* HOME: Título e Texto menores */
   .primary-heading {
-    font-size: 2.2rem;
-    /* Reduzindo mais um pouco */
+    font-size: 3rem;
+    /* Mantendo tamanho razoável */
+  }
+
+  /* Movendo o texto mais para cima */
+  .home-text-section {
+    justify-content: flex-start;
+    /* Alinha ao topo */
+    padding-top: 2rem;
+    /* Ajuste fino */
   }
 
   .home-text-section .primary-text {
-    font-size: 0.9rem;
-    /* Texto ainda menor para 1366 */
-    max-width: 450px;
+    font-size: 1.1rem;
+    /* Aumentando um pouco pois "ficava pequeno" */
+    max-width: 500px;
   }
 
+  /* Botão acompanhando o texto */
   .home-text-section .secundary-button {
-    margin-top: 5rem;
-    /* Aumentado MAIS AINDA para desgrudar */
+    margin-top: 2rem;
+    /* Reduzido de 5rem para subir junto */
   }
 
-  .primary-heading {
-    font-size: 2rem;
-    /* Reduzindo Título */
-  }
-
-  /* HOME: Imagem menor */
+  /* Background Blob menor */
   .home-bannerImage-container {
     max-width: 40vw;
     /* Reduzindo ainda mais para 1366px */
     right: -80px;
+
   }
 
   .home-bannerImage-container img {
@@ -669,6 +688,13 @@ nav {
     font-size: 2rem;
     margin-bottom: 1rem;
     /* Espaço entre título e texto */
+  }
+
+  .footer-section-two {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10rem;
   }
 }
 
